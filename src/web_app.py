@@ -11,7 +11,7 @@ from src.utils.os_helpers import ensure_temp_dir, resolve_device_path, is_admin
 from src.auth.db import init_db, register_user, verify_user
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_DIR = APP_ROOT
+STATIC_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.abspath(os.path.join(APP_ROOT, "..", "data"))
 OUTPUT_DIR = os.path.abspath(os.path.join(APP_ROOT, "..", "temp_downloads"))
 DELETED_DIR = os.path.abspath(os.path.join(APP_ROOT, "..", "temp_deleted"))
@@ -303,3 +303,4 @@ if __name__ == "__main__":
         print("Note: Accessing raw devices may require admin/root privileges.")
 
     app.run(host="127.0.0.1", port=5000, debug=True)
+
